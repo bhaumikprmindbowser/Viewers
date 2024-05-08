@@ -16,7 +16,7 @@ window.config = {
       // ~ REQUIRED
       // Authorization Server URL
       authority: 'https://accounts.google.com',
-      client_id: '723928408739-k9k9r3i44j32rhu69vlnibipmmk9i57p.apps.googleusercontent.com',
+      client_id: '1072827970551-njdpfci82jj5a3cdkqidus7ro22ov6bh.apps.googleusercontent.com',
       redirect_uri: '/callback',
       response_type: 'id_token token',
       scope:
@@ -41,11 +41,11 @@ window.config = {
         friendlyName: 'dcmjs DICOMWeb Server',
         name: 'GCP',
         wadoUriRoot:
-          'https://healthcare.googleapis.com/v1/projects/ohif-cloud-healthcare/locations/us-east4/datasets/ohif-qa-dataset/dicomStores/ohif-qa-2/dicomWeb',
+          'https://healthcare.googleapis.com/v1/projects/mineral-weaver-422109-d3/locations/us-central1/datasets/test-bhaumik/dicomStores/test-bhaumik',
         qidoRoot:
-          'https://healthcare.googleapis.com/v1/projects/ohif-cloud-healthcare/locations/us-east4/datasets/ohif-qa-dataset/dicomStores/ohif-qa-2/dicomWeb',
+          'https://healthcare.googleapis.com/v1/projects/mineral-weaver-422109-d3/locations/us-central1/datasets/test-bhaumik/dicomStores/test-bhaumik',
         wadoRoot:
-          'https://healthcare.googleapis.com/v1/projects/ohif-cloud-healthcare/locations/us-east4/datasets/ohif-qa-dataset/dicomStores/ohif-qa-2/dicomWeb',
+          'https://healthcare.googleapis.com/v1/projects/mineral-weaver-422109-d3/locations/us-central1/datasets/test-bhaumik/dicomStores/test-bhaumik',
         qidoSupportsIncludeField: true,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
