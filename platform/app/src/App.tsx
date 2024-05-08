@@ -39,12 +39,23 @@ let commandsManager: CommandsManager,
 
 function App({ config, defaultExtensions, defaultModes }) {
   const [init, setInit] = useState(null);
+  const [token, setToken] = useState(null);
   useEffect(() => {
     const run = async () => {
       appInit(config, defaultExtensions, defaultModes).then(setInit).catch(console.error);
     };
 
     run();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch('http://localhost:3002/user/token');
+      const responseJson = await response.json();
+      if (responseJson?.token) {
+        setToken(responseJson.token);
+      }
+    })();
   }, []);
 
   if (!init) {
@@ -79,6 +90,14 @@ function App({ config, defaultExtensions, defaultModes }) {
     userAuthenticationService,
     customizationService,
   } = servicesManager.services;
+
+  if (token && userAuthenticationService) {
+    userAuthenticationService?.setServiceImplementation?.({
+      getAuthorizationHeader: () => ({
+        Authorization: 'Bearer ' + token,
+      }),
+    });
+  }
 
   const providers = [
     [AppConfigProvider, { value: appConfigState }],
